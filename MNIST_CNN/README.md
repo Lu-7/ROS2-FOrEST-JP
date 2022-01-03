@@ -31,6 +31,7 @@ ros2 run mnist_cnn_send send
 1. FOrESTを実行してROS2-FPGAノードを生成する
 
 `python3 forest.py -t`
+
 2. Zynqボード上で、ROS2-FPGAノードを実行する
 ```
 sudo -s
