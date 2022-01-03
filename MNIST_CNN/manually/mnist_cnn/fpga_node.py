@@ -47,9 +47,38 @@ class FpgaNode(Node):
     self.input_buffer = allocate(shape=(784,), dtype=np.uint8)
     self.output_buffer = allocate(shape=(1,), dtype=np.uint8)
   
-  def process_input(self, signal_name, msg):
-    
+  def process_input(self, msg):
+    data_size_in = 784
+    for i in range(data_size_in):
+      self.input_buffer[i] = msg[i]
   
+  def process_output(self):
+    data_size_out = 1
+    val=[0]*data_size_out
+    
+    for i in range(data_size_out):
+      val[i]=int(self.output_buffer[i])
+    
+    return val
+  
+  def setup_dma_buffer(self):
+    self.dma.sendchannel.transfer(self.input_buffer)
+    self.dma.recvchannel.transfer(self.output_buffer)
+    
+    return
+  
+  def do_calc(self):
+    self.mmio.write(0x00, 1)
+    if self.dma.sendchannel.running:
+      self.dma.sendchannel.wait()
+    if self.dma.recvchannel.running:
+      self.dma.recvchannel.wait()
+      
+    self.wait_result()
+  
+  def wait_result(self):
+    while(not ((self.mmio.read(0x00) >> 1) & 0x0001)):
+      continue
   
   def fpga_pub_callback(self):
     msg = FpgaOut()
@@ -57,7 +86,7 @@ class FpgaNode(Node):
     self.fpga_pub.publish(msg)
     
   def fpga_sub_callback(self, msg):
-    self.process_input("image_in", msg.image_in)
+    self.process_input(msg.image_in)
     self.setup_dma_buffers()
     self.do_calc()
     self.fpga_pub_callback()
