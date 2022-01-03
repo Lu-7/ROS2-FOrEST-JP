@@ -10,12 +10,12 @@ from pynq import MMIO
 from pynq import allocate
 import pynq.lib.dma
 
-from mnist_cnn_msgs import FpgaIn
-from mnist_cnn_msgs import FpgaOut
+from mnist_cnn_interface.msg import FpgaIn
+from mnist_cnn_interface.msg import FpgaOut
 
 class FpgaNode(Node):
   def __init__(self):
-    super().__init_("fpga_node")
+    super().__init__("fpga_node")
     self.fpga_pub = self.create_publisher(FpgaOut, "fpga_out_topic", 10)
     self.fpga_sub = self.create_subscription(FpgaIn, "fpga_in_topic", self.fpga_sub_callback, 10)
     self.fpga_sub
