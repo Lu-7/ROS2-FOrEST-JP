@@ -10,8 +10,9 @@ from pynq import MMIO
 from pynq import allocate
 import pynq.lib.dma
 
-from mnist_cnn_interface.msg import FpgaIn
-from mnist_cnn_interface.msg import FpgaOut
+
+from forest_mnist_cnn_interface.msg import FpgaIn
+from forest_mnist_cnn_interface.msg import FpgaOut
 
 class FpgaNode(Node):
   def __init__(self):
@@ -27,7 +28,6 @@ class FpgaNode(Node):
   def init_fpga(self):
     self.bit_file = "/home/xilinx/mnist_cnn.bit"
     self.user_ip = "cnn_top_0"
-    #self.in_map = {"image_in": {"protocol": "stream", "type": "int", "n_bit"}}
   
   def program_fpga(self):
     print("Downloading bit file {}...".format(self.bit_file))
@@ -35,17 +35,20 @@ class FpgaNode(Node):
     print("Bit file downloaded")
   
   def setup_fpga(self):
-    regs = self.ovl.ip_dicy[self.user_ip]
+    regs = self.ovl.ip_dict[self.user_ip]
     phys_addr = regs["phys_addr"]
     addr_range = regs["addr_range"]
     print("USER IP phys_addr = 0x{:X}".format(phys_addr))
     print("USER IP addr_range = {}".format(addr_range))
     
-    self.mmin = MMIO(phys_addr, addr_range)
+    self.mmio = MMIO(phys_addr, addr_range)
+    print("mmio")
     self.dma = self.ovl.axi_dma_0
+    print("dma")
     
     self.input_buffer = allocate(shape=(784,), dtype=np.uint8)
     self.output_buffer = allocate(shape=(1,), dtype=np.uint8)
+    print("buffer set")
   
   def process_input(self, msg):
     data_size_in = 784
@@ -82,13 +85,17 @@ class FpgaNode(Node):
   
   def fpga_pub_callback(self):
     msg = FpgaOut()
-    msg.digit = self.process_output("digit")
+    msg.digit = self.process_output()
     self.fpga_pub.publish(msg)
     
   def fpga_sub_callback(self, msg):
+    print("fpga sub")
     self.process_input(msg.image_in)
-    self.setup_dma_buffers()
+    print("image in")
+    self.setup_dma_buffer()
+    print("setup dma buffers")
     self.do_calc()
+    print("done calc")
     self.fpga_pub_callback()
     
 def main(args=None):
