@@ -11,8 +11,8 @@ from pynq import allocate
 import pynq.lib.dma
 
 
-from forest_mnist_cnn_interface.msg import FpgaIn
-from forest_mnist_cnn_interface.msg import FpgaOut
+from mnist_cnn_interface.msg import FpgaIn
+from mnist_cnn_interface.msg import FpgaOut
 
 class FpgaNode(Node):
   def __init__(self):
@@ -87,15 +87,12 @@ class FpgaNode(Node):
     msg = FpgaOut()
     msg.digit = self.process_output()
     self.fpga_pub.publish(msg)
+    print("[data pub]Prediction: {}".format(msg.digit))
     
   def fpga_sub_callback(self, msg):
-    print("fpga sub")
     self.process_input(msg.image_in)
-    print("image in")
     self.setup_dma_buffer()
-    print("setup dma buffers")
     self.do_calc()
-    print("done calc")
     self.fpga_pub_callback()
     
 def main(args=None):
