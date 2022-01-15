@@ -15,7 +15,7 @@
 ### config.forestの設定
 config.forestのテンプレート生成
 
-`python3 forest.py -g -i  -o 1`
+`python3 forest.py -g -i 1 -o 1`
 
 config.forestの記述
 ```
