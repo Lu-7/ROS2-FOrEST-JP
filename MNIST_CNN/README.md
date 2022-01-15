@@ -18,7 +18,7 @@
 
 Forest project name:mnist_cnn
 
-Absolute ROS2 dev_ws path:/home/xilinx/work/dev_ws
+Absolute ROS2 dev_ws path:/home/xilinx/dev_ws
 
 Absolute FPGA .bit file path:/home/xilinx/overlays/mnist_cnn.bit
 
