@@ -53,8 +53,27 @@ Type:uint8[1]
 
 Address Offset (if AXI-Lite):
 ```
+### forest.pyの実行
 
-### PC側での実行
+ 下記のコマンドを実行し、ROS2－FPGAノード及びメッセージを生成する。
+
+`python3 forest.py -t`
+
+
+### ROS2－FPGAノードの動作確認
+
+#### Zynqボード側での実行
+
+1. Zynqボード上で、ROS2-FPGAノードを実行する
+```
+sudo -sE
+cd ~/dev_ws/
+. install/setup.bash
+ros2 run forest_mnist_cnn_fpga_node fpga_node
+```
+
+
+#### PC側での実行
 1. VivadoHLSで新しいプロジェクトを作成し、design_files/フォルダからmnist_cnn.cppとすべての.hファイルをインポートする。
 また、デザインを合成してIPとしてVivadoにエクスポートします。
 2. Vivadoで新しいプロジェクトを作成し、新しいブロックデザインを作成し、手順1でエクスポートしたIPを含めます。
@@ -70,15 +89,4 @@ ros2 run mnist_cnn_send receive
 ros2 run mnist_cnn_send send
 ```
 
-### Zynqボード側での実行
-1. FOrESTを実行してROS2-FPGAノードを生成する
 
-`python3 forest.py -t`
-
-2. Zynqボード上で、ROS2-FPGAノードを実行する
-```
-sudo -s
-cd ~/dev_ws/
-. install/setup.bash
-ros2 run forest_mnist_cnn_fpga_node fpga_node
-```
