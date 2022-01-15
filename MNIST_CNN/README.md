@@ -11,6 +11,44 @@
 - PCとZynqボード間でデータを転送するためのネットワーク設定。
 
 ## サンプルプロジェクトの実行
+
+### config.forestの設定
+```
+**** 1- Setup Information ****
+
+Forest project name:mnist_cnn
+
+Absolute ROS2 dev_ws path:/home/xilinx/work/dev_ws
+
+Absolute FPGA .bit file path:/home/xilinx/overlays/mnist_cnn.bit
+
+User IP name:cnn_top_0
+
+**** 2- Input definitions ****
+
+// Input 1
+
+Input name:image_in
+
+Protocol:stream
+
+Type:uint8[784]
+
+Address Offset (if AXI-Lite):
+
+**** 3- Output definitions ****
+
+// Output 1
+
+Output name:digit
+
+Protocol:stream
+
+Type:uint8[1]
+
+Address Offset (if AXI-Lite):
+```
+
 ### PC側での実行
 1. VivadoHLSで新しいプロジェクトを作成し、design_files/フォルダからmnist_cnn.cppとすべての.hファイルをインポートする。
 また、デザインを合成してIPとしてVivadoにエクスポートします。
