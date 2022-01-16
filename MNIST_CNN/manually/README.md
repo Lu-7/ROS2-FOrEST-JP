@@ -30,9 +30,11 @@ mnist_cnn/fpga_node.pyを見て，fpga_node.pyを編集する
 `ros2 pkg create --build-type ament_cmake mnist_cnn_interface`
 
 - メッセージ用ディレクトリの作成
+
 `mkdir msg`
 
 - メッセージファイルを作成する
+
 `touch FpgaIn.msg FpgaOut.msg`
 
 - メッセージファイルを編集する
