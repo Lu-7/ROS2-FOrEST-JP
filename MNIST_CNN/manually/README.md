@@ -75,4 +75,18 @@ rosidl_generate_interfaces(${PROJECT_NAME}
 
 ## 動作確認
 
+### Zynqボード側での実行
+```
+sudo -sE
+cd ~/dev_ws/
+. install/setup.bash
+ros2 run mnist_cnn fpga_node
+```
 
+
+### PC側での実行
+```
+ros2 run mnist_cnn_send receive
+
+ros2 run mnist_cnn_send send
+```
