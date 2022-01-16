@@ -19,10 +19,13 @@
 ```
 
 - ros2-fpgaノードの作成
-mnist_cnn/mnist_cnn/の直下にfpga_node.pyを作成する
+
+1. mnist_cnn/mnist_cnn/にfpga_node.pyを作成する
+ 
 `touch fpga_node.py`
 
-mnist_cnn/fpga_node.pyを見て，fpga_node.pyを編集する
+2. mnist_cnn/fpga_node.pyを見て，fpga_node.pyを編集する
+
 `vim fpga_node.py`
 
 
