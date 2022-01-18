@@ -5,8 +5,9 @@ FOrESTを用いたROS2-FPGAノード自動生成手法の評価
 
 ## 実験概要
 FOrESTによるROS2-FPGAノード自動生成手法の為，被験者は以下の2つの手法でROS2-FPGAノード開発を行う．
+実験には，FOrESTのサンプルプロジェクトの1つである「Forest Example Project - Convolutional Neural Network for MNIST Digit Recognition」を用いる．
 1. （FOrEST有り）FOrESTを用いてROS2-FPGAノード開発
-2. （FOrEST無し）手順書を見て手動でROS2-FPGAノード開発
+2. （FOrEST無し）手順書を見てROS2-FPGAノード開発
 
 1，2それぞれ工程ごとに時間を計測し，開発時間と必要コード数を評価する．
 
@@ -19,11 +20,11 @@ FOrESTによるROS2-FPGAノード自動生成手法の為，被験者は以下�
 
 ## 実験手順
 
-1. 日本語に訳したドキュメントを用いてFOrESTの概要を説明する．
-2. 加算器のサンプル（add.bit）を用いてFOrESTの実行方法を説明する．
+1. 日本語版ドキュメントを用いて被験者にFOrESTの概要を説明する．
+2. 加算器のサンプル（add.bit）を用いて被験者にFOrESTの実行方法を説明する．
 3. 実験１：自動生成手法，従来手法のうちどちらかを行う．
 4. 実験２：開発１でやらなかった方で行う．
-5. アンケートに回答する．
+5. 被験者はアンケートに回答する．
 
 
 ## 実験時間
