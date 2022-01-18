@@ -6,11 +6,17 @@
 
 - メッセージ用ディレクトリの作成
 
-`mkdir msg`
+```
+cd mnist_cnn_interface
+mkdir msg
+```
 
 - メッセージファイルを作成する
 
-`touch FpgaIn.msg FpgaOut.msg`
+```
+cd msg
+touch FpgaIn.msg FpgaOut.msg
+```
 
 - メッセージファイルを編集する
 
