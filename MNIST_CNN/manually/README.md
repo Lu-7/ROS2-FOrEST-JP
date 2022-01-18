@@ -78,7 +78,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
  
 `touch fpga_node.py`
 
-2. mnist_cnn/fpga_node.pyを見て，fpga_node.pyを編集する
+2. 手順書のmnist_cnn/fpga_node.pyを見て，fpga_node.pyを編集する
 
 `vim fpga_node.py`
 
