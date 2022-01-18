@@ -1,33 +1,5 @@
 # MNIST_CNNのFOrEST無し開発
 
-## ROS2-FPGAノード用パッケージの作成
-`ros2 pkg create --build-type ament_python mnist_cnn`
-
-- package.xmlの１５行目に以下のコードを追加
-```
-  <exec_depend>rclpy</exec_depend>
-  <exec_depend>mnist_cnn_interface</exec_depend>
-```
-
-- setup.pyの２２行目に以下のコードを追加
-```
-    entry_points={
-        'console_scripts': [
-                'fpga_node = mnist_cnn.fpga_node:main',
-        ],
-    },
-```
-
-- ros2-fpgaノードの作成
-
-1. mnist_cnn/mnist_cnn/にfpga_node.pyを作成する
- 
-`touch fpga_node.py`
-
-2. mnist_cnn/fpga_node.pyを見て，fpga_node.pyを編集する
-
-`vim fpga_node.py`
-
 
 ## 独自メッセージ用パッケージの作成
 `ros2 pkg create --build-type ament_cmake mnist_cnn_interface`
@@ -67,6 +39,35 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   <exec_depend>rosidl_default_runtime</exec_depend>
   <member_of_group>rosidl_interface_packages</member_of_group>
 ```
+
+
+## ROS2-FPGAノード用パッケージの作成
+`ros2 pkg create --build-type ament_python mnist_cnn`
+
+- package.xmlの１５行目に以下のコードを追加
+```
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>mnist_cnn_interface</exec_depend>
+```
+
+- setup.pyの２２行目に以下のコードを追加
+```
+    entry_points={
+        'console_scripts': [
+                'fpga_node = mnist_cnn.fpga_node:main',
+        ],
+    },
+```
+
+- ros2-fpgaノードの作成
+
+1. mnist_cnn/mnist_cnn/にfpga_node.pyを作成する
+ 
+`touch fpga_node.py`
+
+2. mnist_cnn/fpga_node.pyを見て，fpga_node.pyを編集する
+
+`vim fpga_node.py`
 
 
 
