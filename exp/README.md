@@ -14,7 +14,7 @@ FOrESTによるROS2-FPGAノード自動生成手法の為，被験者は以下�
 
 1，2の開発フロー比較は以下に示す．
 
-![ROS2-FPGAノード開発のフロー比較（左：従来手法，右：自動生成手法）](forest_flow.jpg)
+![ROS2-FPGAノード開発のフロー比較（左：従来手法，右：自動生成手法）](forest_flow.jpeg)
 
 
 ## 実験時間
@@ -38,7 +38,7 @@ google formsを用いる（所要時間30分）
 
 ### 使用ボード
 PYNQ-Z1ボード3枚，PYNQ-Z2ボード1枚
-![実験に使用したPYNQボード](pynq_exp.jpeg)
+![実験に使用したPYNQボード](pynq_exp.jpg)
 
 - PYNQ-Z1
 ```
