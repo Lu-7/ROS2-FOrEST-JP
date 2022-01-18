@@ -6,7 +6,7 @@
 - package.xmlの１５行目に以下のコードを追加
 ```
   <exec_depend>rclpy</exec_depend>
-  <exec_depend>mnist_cnn_msgs</exec_depend>
+  <exec_depend>mnist_cnn_interface</exec_depend>
 ```
 
 - setup.pyの２２行目に以下のコードを追加
