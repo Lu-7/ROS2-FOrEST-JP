@@ -50,7 +50,7 @@ Forest project name:simple_add
 
 Absolute ROS2 dev_ws path:/home/xilinx/dev_ws
 
-Absolute FPGA .bit file path:/home/xilinx/PYNQ_HW/add.bit
+Absolute FPGA .bit file path:/home/mori/forest/regr_tests/simple_add/overlays/add.bit
 
 User IP name:add_0
 
