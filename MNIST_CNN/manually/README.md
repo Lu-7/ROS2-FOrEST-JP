@@ -2,6 +2,8 @@
 
 
 ## 独自メッセージ用パッケージの作成
+`cd ~/dev_ws/src`
+
 `ros2 pkg create --build-type ament_cmake mnist_cnn_interface`
 
 - メッセージ用ディレクトリの作成
@@ -48,6 +50,9 @@ rosidl_generate_interfaces(${PROJECT_NAME}
 
 
 ## ROS2-FPGAノード用パッケージの作成
+
+`cd ~/dev_ws/src`
+
 `ros2 pkg create --build-type ament_python mnist_cnn`
 
 - package.xmlの１５行目に以下のコードを追加
@@ -68,6 +73,8 @@ rosidl_generate_interfaces(${PROJECT_NAME}
 - ros2-fpgaノードの作成
 
 1. mnist_cnn/mnist_cnn/にfpga_node.pyを作成する
+
+ `cd ~/dev_ws/src/mnist_cnn/mnist_cnn/`
  
 `touch fpga_node.py`
 
@@ -92,8 +99,16 @@ ros2 run mnist_cnn fpga_node
 
 
 ### PC側での実行
+ターミナル1
 ```
+cd ~/dev_ws/
+. install/setup.bash
 ros2 run mnist_cnn_send receive
+```
 
+ターミナル2
+```
+cd ~/dev_ws/
+. install/setup.bash
 ros2 run mnist_cnn_send send
 ```
