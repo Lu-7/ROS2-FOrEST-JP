@@ -26,7 +26,7 @@ class FpgaNode(Node):
     self.setup_fpga()
   
   def init_fpga(self):
-    self.bit_file = "/home/xilinx/mnist_cnn.bit"
+    self.bit_file = "/home/xilinx/overlays/mnist_cnn.bit"
     self.user_ip = "cnn_top_0"
   
   def program_fpga(self):
