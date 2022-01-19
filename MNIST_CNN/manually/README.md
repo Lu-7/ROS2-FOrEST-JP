@@ -70,7 +70,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
     },
 ```
 
-- ros2-fpgaノードの作成
+## ros2-fpgaノードの作成
 
 1. mnist_cnn/mnist_cnn/にfpga_node.pyを作成する
 
@@ -85,7 +85,10 @@ rosidl_generate_interfaces(${PROJECT_NAME}
 
 
 ## パッケージのビルド
-`colcon build`
+```
+cd ~/dev_ws/
+colcon build
+````
 
 ## 動作確認
 
