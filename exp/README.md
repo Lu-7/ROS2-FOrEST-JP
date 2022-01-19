@@ -20,11 +20,11 @@ FOrESTによるROS2-FPGAノード自動生成手法の為，被験者は以下�
 
 ## 実験手順
 
-1. 日本語版ドキュメントを用いて被験者にFOrESTの概要を説明する．
-2. 加算器のサンプル（add.bit）を用いて被験者にFOrESTの実行方法を説明する．
-3. 実験１：自動生成手法，従来手法のうちどちらかを行う．
-4. 実験２：開発１でやらなかった方で行う．
-5. 被験者はアンケートに回答する．
+1. [日本語版ドキュメント](https://github.com/Lu-7/ROS2-FOrEST-JP)を用いて被験者にFOrESTの概要を説明する．
+2. [加算器のサンプル（add.bit）](https://github.com/Lu-7/ROS2-FOrEST-JP/tree/main/add)を用いて被験者にFOrESTの実行方法を説明する．
+3. 実験１：[自動生成手法](https://github.com/Lu-7/ROS2-FOrEST-JP/tree/main/MNIST_CNN)，[従来手法](https://github.com/Lu-7/ROS2-FOrEST-JP/tree/main/MNIST_CNN/manually)のうちどちらかを行う．
+4. 実験２：実験１でやらなかった方で行う．
+5. 被験者は[アンケート](https://forms.gle/JYqNWKnkGAXvUuw27)に回答する．
 
 
 ## 実験時間
