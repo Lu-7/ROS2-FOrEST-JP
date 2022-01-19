@@ -29,7 +29,7 @@ FOrESTによるROS2-FPGAノード自動生成手法の為，被験者は以下�
 
 ## 実験時間
 - 実施時間：３～4時間を想定
-  - 説明：1時間
+  - 説明：10分
   - FOrEST無し開発：1~2時間
   - FOrEST有り開発：30分
   - アンケート：30分
@@ -42,7 +42,7 @@ google formsを用いる（所要時間30分）
 ## 実験環境
 
 - ROS2 Eloquent
-- Vivado, Vivado HLSのVer2019.1
+- Vivado, Vivado HLS Ver2019.1
 - PYNQ v2.5
 
 ### 使用ボード
